@@ -1,2 +1,2 @@
 # entity-service-cliente-v1
-EVALUACION MS
+EVALUACION MS SALINAS
