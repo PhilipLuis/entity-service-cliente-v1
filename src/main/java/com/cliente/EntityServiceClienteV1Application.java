@@ -1,4 +1,4 @@
-package com.entity.cliente.azteca;
+package com.cliente;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

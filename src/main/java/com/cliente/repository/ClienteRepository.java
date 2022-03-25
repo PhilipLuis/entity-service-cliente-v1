@@ -1,13 +1,13 @@
-package com.entity.cliente.repository;
+package com.cliente.repository;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.entity.cliente.entity.Cliente;
+import com.cliente.entity.Cliente;
 
 public interface ClienteRepository {
 
-	Cliente save(Cliente cliente);
+	void save(List<Cliente> clientesSorted);
 
 	List<Cliente> findAll();
 	

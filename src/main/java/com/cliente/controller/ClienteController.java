@@ -1,4 +1,4 @@
-package com.entity.cliente.controller;
+package com.cliente.controller;
 
 import java.util.List;
 
@@ -9,15 +9,16 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.entity.cliente.entity.Cliente;
-import com.entity.cliente.service.ClienteService;
+import com.cliente.entity.Cliente;
+import com.cliente.service.ClienteService;
 
 @RestController
-@RequestMapping ("/clientes")
+@RequestMapping ("/cliente")
 public class ClienteController {
 
 	@Autowired
@@ -36,7 +37,12 @@ public class ClienteController {
 	
 	@PostMapping("/save")
 	public ResponseEntity<Cliente> save(@RequestBody Cliente cliente) {
-		return new ResponseEntity<Cliente>(clienteService.save(cliente), HttpStatus.CREATED);
+		return new ResponseEntity<Cliente>(clienteService.saveOrUpdate(cliente), HttpStatus.CREATED);
+	}
+	
+	@PutMapping("/update")
+	public ResponseEntity<Cliente> update(@RequestBody Cliente cliente) {
+		return new ResponseEntity<Cliente>(clienteService.saveOrUpdate(cliente), HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/delete/{id}")
